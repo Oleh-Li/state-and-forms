@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./Statistics.module.css"
+import styles from "./Statistics.module.css";
+import propTypes from "prop-types";
 
 const Statistics = ({ good, neutral, bad, total, positivePercent }) => (
   <div className={styles.statContainer}>
@@ -19,5 +20,21 @@ const Statistics = ({ good, neutral, bad, total, positivePercent }) => (
     <span>{Math.round(positivePercent)}%</span>
   </div>
 );
+
+Statistics.defaultProps = {
+  good: 0,
+  neutral: 0,
+  bad: 0,
+  total: 0,
+  positivePercent: 0,
+};
+
+Statistics.propTypes = {
+  good: propTypes.number.isRequired,
+  neutral: propTypes.number.isRequired,
+  bad: propTypes.number.isRequired,
+  total: propTypes.number.isRequired,
+  positivePercent: propTypes.number.isRequired,
+};
 
 export default Statistics;

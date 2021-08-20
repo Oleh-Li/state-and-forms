@@ -3,7 +3,7 @@ import Feedback from "./feedback/Feedback";
 import Statistics from "./feedback/statistics/Statistics";
 import Section from "./Section";
 import Notification from "./feedback/notification/Notification";
-import styles from "./App.module.css"
+import styles from "./App.module.css";
 
 export class App extends Component {
   state = {
@@ -14,25 +14,9 @@ export class App extends Component {
     positivePercent: 0,
   };
 
-  handleGood = () => {
+  handleLeaveFeedback = (e) => {
     this.setState((prevState) => ({
-      good: (prevState.good += 1),
-    }));
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
-  };
-
-  handleNeutral = () => {
-    this.setState((prevState) => ({
-      neutral: (prevState.neutral += 1),
-    }));
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
-  };
-
-  handleBad = () => {
-    this.setState((prevState) => ({
-      bad: (prevState.bad += 1),
+      [e.target.name]: (prevState[e.target.name] += 1),
     }));
     this.countTotalFeedback();
     this.countPositiveFeedbackPercentage();
@@ -56,27 +40,23 @@ export class App extends Component {
     return (
       <div className="App">
         <div className={styles.feedbackContainer}>
-        <Section title="Please leave feedback">
-          <Feedback
-            handleGood={this.handleGood}
-            handleNeutral={this.handleNeutral}
-            handleBad={this.handleBad}
-          />
-        </Section>
+          <Section title="Please leave feedback">
+            <Feedback onLeaveFeedback={this.handleLeaveFeedback} />
+          </Section>
 
-        <Section title="Statistics">
-          {this.state.total === 0 ? (
-            <Notification message="No feedback given" />
-          ) : (
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={total}
-              positivePercent={positivePercent}
-            />
-          )}
-        </Section>
+          <Section title="Statistics">
+            {this.state.total === 0 ? (
+              <Notification message="No feedback given" />
+            ) : (
+              <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={total}
+                positivePercent={positivePercent}
+              />
+            )}
+          </Section>
         </div>
       </div>
     );

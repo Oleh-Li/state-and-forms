@@ -1,17 +1,38 @@
 import React from "react";
+import styles from "./Feedback.module.css";
+import propTypes from "prop-types";
 
-const Feedback = ({ handleGood, handleNeutral, handleBad }) => (
-  <div>
-    <button type="button" onClick={handleGood}>
+const Feedback = ({ onLeaveFeedback }) => (
+  <div className={styles.buttonContainer}>
+    <button
+      className={styles.buttonStyles}
+      type="button"
+      name="good"
+      onClick={onLeaveFeedback}
+    >
       Good
     </button>
-    <button type="button" onClick={handleNeutral}>
+    <button
+      className={styles.buttonStyles}
+      type="button"
+      name="neutral"
+      onClick={onLeaveFeedback}
+    >
       Neutral
     </button>
-    <button type="button" onClick={handleBad}>
+    <button
+      className={styles.buttonStyles}
+      type="button"
+      name="bad"
+      onClick={onLeaveFeedback}
+    >
       Bad
     </button>
   </div>
 );
+
+Feedback.propTypes = {
+  onLeaveFeedback: propTypes.func.isRequired,
+};
 
 export default Feedback;

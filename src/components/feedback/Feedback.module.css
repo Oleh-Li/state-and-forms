@@ -1,0 +1,11 @@
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.buttonStyles {
+  width: 76px;
+  height: 26px;
+  font-size: 16px;
+}
