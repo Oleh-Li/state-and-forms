@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/state-and-forms/static/css/main.a2b91d72.chunk.css",
+    "main.js": "/state-and-forms/static/js/main.4f70c342.chunk.js",
+    "main.js.map": "/state-and-forms/static/js/main.4f70c342.chunk.js.map",
+    "runtime-main.js": "/state-and-forms/static/js/runtime-main.954a2f1d.js",
+    "runtime-main.js.map": "/state-and-forms/static/js/runtime-main.954a2f1d.js.map",
+    "static/js/2.f69d0c26.chunk.js": "/state-and-forms/static/js/2.f69d0c26.chunk.js",
+    "static/js/2.f69d0c26.chunk.js.map": "/state-and-forms/static/js/2.f69d0c26.chunk.js.map",
+    "index.html": "/state-and-forms/index.html",
+    "static/css/main.a2b91d72.chunk.css.map": "/state-and-forms/static/css/main.a2b91d72.chunk.css.map",
+    "static/js/2.f69d0c26.chunk.js.LICENSE.txt": "/state-and-forms/static/js/2.f69d0c26.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.954a2f1d.js",
+    "static/js/2.f69d0c26.chunk.js",
+    "static/css/main.a2b91d72.chunk.css",
+    "static/js/main.4f70c342.chunk.js"
+  ]
+}
